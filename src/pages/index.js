@@ -5,6 +5,18 @@ import go from "../../public/images/logos/go.png";
 import js from "../../public/images/logos/js.png";
 import py from "../../public/images/logos/python.png";
 import java from "../../public/images/logos/java.png";
+import Link from "next/link";
+
+const handleSmoothScroll = (e, id) => {
+  e.preventDefault();
+  const element = document.querySelector(id);
+  if (element) {
+    window.scrollTo({
+      top: element.offsetTop,
+      behavior: "smooth",
+    });
+  }
+};
 
 export default function Home() {
   return (
@@ -14,14 +26,33 @@ export default function Home() {
           <div className="w-6/12">
             <ul className={`flex py-4 justify-around font-roboto`}>
               <li>
-                <a href="#home">HOME</a>
+                {/* <Link href="#home" scroll={false}>
+                  HOME
+                </Link> */}
+                <button onClick={(e) => handleSmoothScroll(e, "#home")}>
+                  HOME
+                </button>
               </li>
               <li>
-                <a href="#about">ABOUT</a>
+                <button onClick={(e) => handleSmoothScroll(e, "#about")}>
+                  ABOUT
+                </button>
               </li>
-              <li>SKILLS</li>
-              <li>PROJECTS</li>
-              <li>CONTACTS</li>
+              <li>
+                <button onClick={(e) => handleSmoothScroll(e, "#skills")}>
+                  SKILLS
+                </button>
+              </li>
+              <li>
+                <button onClick={(e) => handleSmoothScroll(e, "#projects")}>
+                  PROJECTS
+                </button>
+              </li>
+              <li>
+                <button onClick={(e) => handleSmoothScroll(e, "#contacts")}>
+                  CONTACTS
+                </button>
+              </li>
             </ul>
           </div>
           <div className="w-6/12 flex justify-end pr-8 my-auto">
@@ -55,7 +86,7 @@ export default function Home() {
       </section>
 
       <section className="w-6/12 flex mx-auto h-screen" id="about">
-        <div className="w-full my-auto pb-40 mx-auto">
+        <div className="w-full my-auto mx-auto">
           <div className="text-center">
             <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#7FB3D5]">
               ABOUT ME
@@ -74,8 +105,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-6/12 flex mx-auto h-screen" id="about">
-        <div className="w-full my-auto pb-40 mx-auto">
+      <section className="w-6/12 flex mx-auto h-screen" id="skills">
+        <div className="w-full my-auto mx-auto">
           <div className="text-center">
             <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#7FB3D5]">
               SKILLS
@@ -106,7 +137,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-6/12 flex mx-auto h-screen" id="about">
+      <section className="w-6/12 flex mx-auto h-screen" id="projects">
         <div className="w-full my-auto mx-auto">
           <div className="text-center">
             <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#7FB3D5]">
@@ -254,7 +285,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-6/12 flex mx-auto h-screen" id="about">
+      <section className="w-6/12 flex mx-auto h-screen" id="contacts">
         <div className="w-full my-auto pb-40 mx-auto">
           <div className="text-center">
             <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#7FB3D5]">
