@@ -261,7 +261,40 @@ export default function Home() {
               CONTACTS
             </h1>
           </div>
-          <div className=""></div>
+          <div className="mt-20 flex justify-evenly">
+            <a href="">
+              <Image
+                src={js}
+                alt="sosmed-logo"
+                width={100}
+                className="rounded-full"
+              />
+            </a>
+            <a href="">
+              <Image
+                src={js}
+                alt="sosmed-logo"
+                width={100}
+                className="rounded-full"
+              />
+            </a>
+            <a href="">
+              <Image
+                src={js}
+                alt="sosmed-logo"
+                width={100}
+                className="rounded-full"
+              />
+            </a>
+            <a href="">
+              <Image
+                src={js}
+                alt="sosmed-logo"
+                width={100}
+                className="rounded-full"
+              />
+            </a>
+          </div>
         </div>
       </section>
     </main>
