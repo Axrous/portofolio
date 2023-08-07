@@ -6,6 +6,10 @@ import js from "../../public/images/logos/js.png";
 import py from "../../public/images/logos/python.png";
 import java from "../../public/images/logos/java.png";
 import Link from "next/link";
+import githubLogo from "../../public/images/logos/github-black.svg";
+import telegramLogo from "../../public/images/logos/telegram.svg";
+import linkedin from "../../public/images/logos/linkedin.svg";
+import mail from "../../public/images/logos/email.svg";
 
 const handleSmoothScroll = (e, id) => {
   e.preventDefault();
@@ -145,19 +149,19 @@ export default function Home() {
             </h1>
           </div>
           <div className="mt-20 flex justify-evenly">
-            <div class="w-3/12 bg-white border border-gray-200 rounded-lg shadow">
+            <div className="w-3/12 bg-white border border-gray-200 rounded-lg shadow">
               <Image
                 src={java}
                 alt="project-image"
                 className="p-2 border-b-2"
               />
 
-              <div class="p-2">
-                <h5 class="mb-2 text-xl font-montserrat font-bold tracking-tight text-gray-900 ">
+              <div className="p-2">
+                <h5 className="mb-2 text-xl font-montserrat font-bold tracking-tight text-gray-900 ">
                   Mae Kos
                 </h5>
 
-                <p class="mb-3 font-montserrat text-gray-700 ">
+                <p className="mb-3 font-montserrat text-gray-700 ">
                   Project manajemen pemesanan kamar kos, dibuat menggunakan
                   Laravel, MySQL, InertiaJS.
                 </p>
@@ -168,94 +172,16 @@ export default function Home() {
                   Learn More
                   <svg
                     class="w-3.5 h-3.5 ml-2"
-                    aria-hidden="true"
+                    ariaHidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 14 10"
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M1 5h12m0 0L9 1m4 4L9 9"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="w-3/12 bg-white border border-gray-200 rounded-lg shadow">
-              <Image
-                src={java}
-                alt="project-image"
-                className="p-2 border-b-2"
-              />
-
-              <div class="p-2">
-                <h5 class="mb-2 text-xl font-montserrat font-bold tracking-tight text-gray-900 ">
-                  Mae Kos
-                </h5>
-
-                <p class="mb-3 font-montserrat text-gray-700 ">
-                  Project manajemen pemesanan kamar kos, dibuat menggunakan
-                  Laravel, MySQL, InertiaJS.
-                </p>
-                <a
-                  href="#"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center   rounded-lg hover:bg-[#7FB3D5] focus:ring-4 focus:outline-none focus:ring-blue-300"
-                >
-                  Learn More
-                  <svg
-                    class="w-3.5 h-3.5 ml-2"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 10"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M1 5h12m0 0L9 1m4 4L9 9"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="w-3/12 bg-white border border-gray-200 rounded-lg shadow">
-              <Image
-                src={java}
-                alt="project-image"
-                className="p-2 border-b-2"
-              />
-
-              <div class="p-2">
-                <h5 class="mb-2 text-xl font-montserrat font-bold tracking-tight text-gray-900 ">
-                  Mae Kos
-                </h5>
-
-                <p class="mb-3 font-montserrat text-gray-700 ">
-                  Project manajemen pemesanan kamar kos, dibuat menggunakan
-                  Laravel, MySQL, InertiaJS.
-                </p>
-                <a
-                  href="#"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center   rounded-lg hover:bg-[#7FB3D5] focus:ring-4 focus:outline-none focus:ring-blue-300"
-                >
-                  Learn More
-                  <svg
-                    class="w-3.5 h-3.5 ml-2"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 10"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
@@ -293,9 +219,20 @@ export default function Home() {
             </h1>
           </div>
           <div className="mt-20 flex justify-evenly">
-            <a href="">
+            <a
+              href="https://github.com/Axrous?tab=repositories"
+              target="_blank"
+            >
               <Image
-                src={js}
+                src={githubLogo}
+                alt="sosmed-logo"
+                width={100}
+                className="rounded-full"
+              />
+            </a>
+            <a href="https://t.me/argasatya">
+              <Image
+                src={telegramLogo}
                 alt="sosmed-logo"
                 width={100}
                 className="rounded-full"
@@ -303,27 +240,14 @@ export default function Home() {
             </a>
             <a href="">
               <Image
-                src={js}
+                src={linkedin}
                 alt="sosmed-logo"
                 width={100}
                 className="rounded-full"
               />
             </a>
-            <a href="">
-              <Image
-                src={js}
-                alt="sosmed-logo"
-                width={100}
-                className="rounded-full"
-              />
-            </a>
-            <a href="">
-              <Image
-                src={js}
-                alt="sosmed-logo"
-                width={100}
-                className="rounded-full"
-              />
+            <a href="mailto:argasatya16@gmail.com">
+              <Image src={mail} alt="sosmed-logo" width={100} className="" />
             </a>
           </div>
         </div>
