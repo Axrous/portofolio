@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Roboto, Exo, Montserrat } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
 const roboto = Roboto({
   weight: "400",
@@ -21,10 +22,11 @@ const montserrat = Montserrat({
 
 export default function App({ Component, pageProps }) {
   return (
-    <main
+    <ThemeProvider
       className={`${roboto.variable} ${exo.variable} ${montserrat.variable}  font-sans`}
+      attribute="class"
     >
       <Component {...pageProps} />
-    </main>
+    </ThemeProvider>
   );
 }

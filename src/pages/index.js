@@ -5,11 +5,13 @@ import go from "../../public/images/logos/go.png";
 import js from "../../public/images/logos/js.png";
 import py from "../../public/images/logos/python.png";
 import java from "../../public/images/logos/java.png";
-import Link from "next/link";
 import githubLogo from "../../public/images/logos/github-black.svg";
 import telegramLogo from "../../public/images/logos/telegram.svg";
 import linkedin from "../../public/images/logos/linkedin.svg";
 import mail from "../../public/images/logos/email.svg";
+import moon from "../../public/images/logos/moon.svg";
+import sun from "../../public/images/logos/sun.svg";
+import { useTheme } from "next-themes";
 
 const handleSmoothScroll = (e, id) => {
   e.preventDefault();
@@ -22,17 +24,26 @@ const handleSmoothScroll = (e, id) => {
   }
 };
 
+const modeButton = (theme) => {
+  if (theme == "light") {
+    return sun;
+  }
+
+  return moon;
+};
+
 export default function Home() {
+  const { systemTheme, theme, setTheme } = useTheme();
+  // const currentTheme = theme === "system" ? systemTheme : theme;
+  // const [modeImage, setModeImage] = useState(theme);
+
   return (
-    <main className="bg-[#F9F6EE]">
-      <nav className="bg-[#7FB3D5] mt-0 fixed w-full z-10 top-0">
+    <main className="">
+      <nav className="bg-[#7FB3D5] dark:bg-[#19334D] mt-0 fixed w-full z-10 top-0">
         <div className="w-6/12 mx-auto flex">
           <div className="w-6/12">
             <ul className={`flex py-4 justify-around font-roboto`}>
               <li>
-                {/* <Link href="#home" scroll={false}>
-                  HOME
-                </Link> */}
                 <button onClick={(e) => handleSmoothScroll(e, "#home")}>
                   HOME
                 </button>
@@ -60,9 +71,14 @@ export default function Home() {
             </ul>
           </div>
           <div className="w-6/12 flex justify-end pr-8 my-auto">
-            <a href="#" className="hover:text-red-500">
-              LOGO
-            </a>
+            <button
+              onClick={() =>
+                theme == "dark" ? setTheme("light") : setTheme("dark")
+              }
+              className=""
+            >
+              <Image src={modeButton(theme)} alt="mode-button" width={50} />
+            </button>
           </div>
         </div>
       </nav>
@@ -77,7 +93,7 @@ export default function Home() {
               alt="Picture of the author"
             />
           </div>
-          <div className="ml-5 w-10/12 border-l-[12px] border-l-[#7FB3D5] pl-2 py-1 my-auto">
+          <div className="ml-5 w-10/12 border-l-[12px] border-l-[#7FB3D5] pl-2 py-1 my-auto dark:border-l-[#19334D]">
             <h1 className="text-5xl font-exo font-bold tracking-widest">
               ARGA SATYA MULYONO
             </h1>
@@ -92,7 +108,7 @@ export default function Home() {
       <section className="w-6/12 flex mx-auto h-screen" id="about">
         <div className="w-full my-auto mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#7FB3D5]">
+            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
               ABOUT ME
             </h1>
           </div>
@@ -112,28 +128,28 @@ export default function Home() {
       <section className="w-6/12 flex mx-auto h-screen" id="skills">
         <div className="w-full my-auto mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#7FB3D5]">
+            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
               SKILLS
             </h1>
           </div>
           <div className="w-11/12 mx-auto mt-28 grid grid-cols-4 gap-4">
-            <div className="text-center flex flex-col justify-between h-52 py-4 px-4 mx-auto rounded-lg shadow-2xl grayscale">
+            <div className="text-center flex flex-col justify-between h-52 py-4 px-4 mx-auto rounded-lg shadow-2xl grayscale dark:grayscale-0">
               <Image src={PHP} width={150} alt="Image" className="my-auto" />
               {/* <p className="text-xl font-montserrat">PHP</p> */}
             </div>
-            <div className="text-center flex flex-col justify-between h-52 py-4 px-4 mx-auto rounded-lg shadow-2xl grayscale">
+            <div className="text-center flex flex-col justify-between h-52 py-4 px-4 mx-auto rounded-lg shadow-2xl grayscale dark:grayscale-0">
               <Image src={go} width={150} alt="Image" className="my-auto" />
               {/* <p className="text-xl font-montserrat">GOLANG</p> */}
             </div>
-            <div className="text-center flex flex-col justify-between h-52 py-4 px-4 mx-auto rounded-lg shadow-2xl grayscale">
+            <div className="text-center flex flex-col justify-between h-52 py-4 px-4 mx-auto rounded-lg shadow-2xl grayscale dark:grayscale-0">
               <Image src={js} width={150} alt="Image" className="my-auto" />
               {/* <p className="text-xl font-montserrat">JavaScript</p> */}
             </div>
-            <div className="text-center flex flex-col justify-between h-52 py-4 px-4 mx-auto rounded-lg shadow-2xl grayscale">
+            <div className="text-center flex flex-col justify-between h-52 py-4 px-4 mx-auto rounded-lg shadow-2xl grayscale dark:grayscale-0">
               <Image src={py} width={150} alt="Image" className="my-auto" />
               {/* <p className="text-xl font-montserrat">JavaScript</p> */}
             </div>
-            <div className="text-center flex flex-col justify-between h-52 py-4 px-4 mx-auto rounded-lg shadow-2xl grayscale">
+            <div className="text-center flex flex-col justify-between h-52 py-4 px-4 mx-auto rounded-lg shadow-2xl grayscale dark:grayscale-0">
               <Image src={java} width={150} alt="Image" className="my-auto" />
               {/* <p className="text-xl font-montserrat">JavaScript</p> */}
             </div>
@@ -144,12 +160,12 @@ export default function Home() {
       <section className="w-6/12 flex mx-auto h-screen" id="projects">
         <div className="w-full my-auto mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#7FB3D5]">
+            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
               PROJECTS
             </h1>
           </div>
-          <div className="mt-20 flex justify-evenly">
-            <div className="w-3/12 bg-white border border-gray-200 rounded-lg shadow">
+          <div className="mt-20 flex justify-evenly ">
+            <div className="w-3/12 bg-white border border-gray-200 rounded-lg shadow dark:bg-[#19334D] dark:border-0">
               <Image
                 src={java}
                 alt="project-image"
@@ -157,17 +173,17 @@ export default function Home() {
               />
 
               <div className="p-2">
-                <h5 className="mb-2 text-xl font-montserrat font-bold tracking-tight text-gray-900 ">
+                <h5 className="mb-2 text-xl font-montserrat font-bold tracking-tight text-gray-900 dark:text-white ">
                   Mae Kos
                 </h5>
 
-                <p className="mb-3 font-montserrat text-gray-700 ">
+                <p className="mb-3 font-montserrat text-gray-700 dark:text-white">
                   Project manajemen pemesanan kamar kos, dibuat menggunakan
                   Laravel, MySQL, InertiaJS.
                 </p>
                 <a
                   href="#"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center   rounded-lg hover:bg-[#7FB3D5] focus:ring-4 focus:outline-none focus:ring-blue-300"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center rounded-lg hover:bg-[#7FB3D5] focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Learn More
                   <svg
@@ -214,7 +230,7 @@ export default function Home() {
       <section className="w-6/12 flex mx-auto h-screen" id="contacts">
         <div className="w-full my-auto pb-40 mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#7FB3D5]">
+            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
               CONTACTS
             </h1>
           </div>
@@ -227,7 +243,7 @@ export default function Home() {
                 src={githubLogo}
                 alt="sosmed-logo"
                 width={100}
-                className="rounded-full"
+                className="rounded-full "
               />
             </a>
             <a href="https://t.me/argasatya">

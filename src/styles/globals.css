@@ -6,4 +6,7 @@
   html {
     @apply scroll-smooth;
   }
+  body {
+    @apply dark:bg-[#191919] bg-[#F9F6EE]
+  }
 }
