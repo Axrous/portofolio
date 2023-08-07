@@ -12,7 +12,7 @@ import mail from "../../public/images/logos/email.svg";
 import moon from "../../public/images/logos/moon.svg";
 import sun from "../../public/images/logos/sun.svg";
 import { useTheme } from "next-themes";
-
+import React, { useState } from "react";
 const handleSmoothScroll = (e, id) => {
   e.preventDefault();
   const element = document.querySelector(id);
@@ -34,50 +34,102 @@ const modeButton = (theme) => {
 
 export default function Home() {
   const { systemTheme, theme, setTheme } = useTheme();
+  const [isOpen, setIsOpen] = useState(true);
   // const currentTheme = theme === "system" ? systemTheme : theme;
   // const [modeImage, setModeImage] = useState(theme);
 
   return (
     <main className="">
       <nav className="bg-[#7FB3D5] dark:bg-[#19334D] mt-0 fixed w-full z-10 top-0">
-        <div className="w-6/12 mx-auto flex">
-          <div className="w-6/12">
-            <ul className={`flex py-4 justify-around font-roboto`}>
+        <div className=" md:w-6/12 mx-auto flex justify-between">
+          <div className="block lg:hidden my-auto ml-2">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex items-center px-3 py-2 rounded text-black-500 hover:text-black-400"
+            >
+              <svg
+                className={`fill-current h-7 w-7 ${
+                  isOpen ? "hidden" : "block"
+                }`}
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+              </svg>
+              <svg
+                className={`fill-current h-7 w-7 ${
+                  isOpen ? "block" : "hidden"
+                }`}
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
+              </svg>
+            </button>
+          </div>
+          <div className={`lg:w-6/12 ${isOpen ? "block" : "hidden"}`}>
+            <ul
+              className={`w-11/12 flex left-0 right-0 mx-auto lg:relative justify-around font-roboto border md:border-0 absolute mt-14 md:mt-0 py-4 px-5 md:px-0 md:left-auto rounded-xl border-black dark:border-white`}
+            >
               <li>
-                <button onClick={(e) => handleSmoothScroll(e, "#home")}>
+                <button
+                  onClick={(e) => {
+                    handleSmoothScroll(e, "#home");
+                  }}
+                >
                   HOME
                 </button>
               </li>
               <li>
-                <button onClick={(e) => handleSmoothScroll(e, "#about")}>
+                <button
+                  onClick={(e) => {
+                    handleSmoothScroll(e, "#about");
+                  }}
+                >
                   ABOUT
                 </button>
               </li>
               <li>
-                <button onClick={(e) => handleSmoothScroll(e, "#skills")}>
+                <button
+                  onClick={(e) => {
+                    handleSmoothScroll(e, "#skills");
+                  }}
+                >
                   SKILLS
                 </button>
               </li>
               <li>
-                <button onClick={(e) => handleSmoothScroll(e, "#projects")}>
+                <button
+                  onClick={(e) => {
+                    handleSmoothScroll(e, "#projects");
+                  }}
+                >
                   PROJECTS
                 </button>
               </li>
               <li>
-                <button onClick={(e) => handleSmoothScroll(e, "#contacts")}>
+                <button
+                  onClick={(e) => {
+                    handleSmoothScroll(e, "#contacts");
+                  }}
+                >
                   CONTACTS
                 </button>
               </li>
             </ul>
           </div>
-          <div className="w-6/12 flex justify-end pr-8 my-auto">
+          <div className="md:w-6/12 flex justify-end mr-2 md:mr-0 md:pr-8 my-auto">
             <button
               onClick={() =>
                 theme == "dark" ? setTheme("light") : setTheme("dark")
               }
               className=""
             >
-              <Image src={modeButton(theme)} alt="mode-button" width={50} />
+              <Image
+                src={modeButton(theme)}
+                alt="mode-button"
+                width={`${isOpen ? 50 : 50}`}
+              />
             </button>
           </div>
         </div>
