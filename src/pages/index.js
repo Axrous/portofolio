@@ -203,15 +203,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-6/12 flex mx-auto h-screen" id="projects">
+      <section className="md:w-6/12 flex mx-auto h-screen" id="projects">
         <div className="w-full my-auto mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
+            <h1 className="text-4xl md:text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
               PROJECTS
             </h1>
           </div>
           <div className="mt-20 flex justify-evenly ">
-            <div className="w-3/12 bg-white border border-gray-200 rounded-lg shadow dark:bg-[#19334D] dark:border-0">
+            <div className="w-7/12 md:w-3/12 bg-white border border-gray-200 rounded-lg shadow dark:bg-[#19334D] dark:border-0">
               <Image
                 src={java}
                 alt="project-image"
