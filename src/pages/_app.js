@@ -25,6 +25,7 @@ export default function App({ Component, pageProps }) {
     <ThemeProvider
       className={`${roboto.variable} ${exo.variable} ${montserrat.variable}  font-sans`}
       attribute="class"
+      enableSystem={false}
     >
       <Component {...pageProps} />
     </ThemeProvider>

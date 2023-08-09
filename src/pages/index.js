@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import profilePicture from "../../public/images/arga.jpeg";
 import PHP from "../../public/images/logos/php.png";
@@ -13,30 +15,21 @@ import moon from "../../public/images/logos/moon.svg";
 import sun from "../../public/images/logos/sun.svg";
 import { useTheme } from "next-themes";
 import React, { useState } from "react";
-const handleSmoothScroll = (e, id) => {
-  e.preventDefault();
-  const element = document.querySelector(id);
-  if (element) {
-    window.scrollTo({
-      top: element.offsetTop,
-      behavior: "smooth",
-    });
-  }
-};
-
-const modeButton = (theme) => {
-  if (theme == "light") {
-    return sun;
-  }
-
-  return moon;
-};
 
 export default function Home() {
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(true);
-  // const currentTheme = theme === "system" ? systemTheme : theme;
-  // const [modeImage, setModeImage] = useState(theme);
+
+  const handleSmoothScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.querySelector(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <main className="">
@@ -126,9 +119,9 @@ export default function Home() {
               className=""
             >
               <Image
-                src={modeButton(theme)}
+                src={theme === "dark" ? moon : sun}
                 alt="mode-button"
-                width={`${isOpen ? 50 : 50}`}
+                width={50}
               />
             </button>
           </div>
@@ -235,12 +228,12 @@ export default function Home() {
                 </p>
                 <a
                   href="#"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center rounded-lg hover:bg-[#7FB3D5] focus:ring-4 focus:outline-none focus:ring-blue-300"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center rounded-lg hover:bg-[#7FB3D5] focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Learn More
                   <svg
-                    class="w-3.5 h-3.5 ml-2"
-                    ariaHidden="true"
+                    className="w-3.5 h-3.5 ml-2"
+                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 14 10"
@@ -269,9 +262,9 @@ export default function Home() {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               />
             </svg>
