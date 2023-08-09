@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import profilePicture from "../../public/images/arga.jpeg";
 import PHP from "../../public/images/logos/php.png";
@@ -128,21 +126,21 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="w-6/12 flex mx-auto h-screen" id="home">
-        <div className="flex my-auto">
+      <section className="md:w-6/12 flex mx-auto h-screen" id="home">
+        <div className="flex flex-col md:flex-row my-auto">
           <div>
             <Image
               src={profilePicture}
               width={200}
-              className="rounded-full"
+              className="rounded-full mx-auto"
               alt="Picture of the author"
             />
           </div>
-          <div className="ml-5 w-10/12 border-l-[12px] border-l-[#7FB3D5] pl-2 py-1 my-auto dark:border-l-[#19334D]">
-            <h1 className="text-5xl font-exo font-bold tracking-widest">
+          <div className="md:ml-5 w-11/12 mx-auto md:w-10/12 mt-10 md:mt-auto border-l-[12px] border-l-[#7FB3D5] pl-2 py-1 my-auto dark:border-l-[#19334D]">
+            <h1 className="text-4xl md:text-5xl font-exo font-bold tracking-widest">
               ARGA SATYA MULYONO
             </h1>
-            <h2 className="text-xl font-montserrat w-8/12">
+            <h2 className="text-xl font-montserrat md:w-8/12">
               A human who wants to become a proficient programmer soon. Wish me
               Luck!
             </h2>
@@ -150,18 +148,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-6/12 flex mx-auto h-screen" id="about">
+      <section className="md:w-6/12 flex mx-auto h-screen " id="about">
         <div className="w-full my-auto mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
+            <h1 className="text-4xl md:text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
               ABOUT ME
             </h1>
           </div>
-          <div className="w-10/12 mx-auto mt-28">
+          <div className="w-11/12 md:w-10/12 mx-auto mt-16 md:mt-28">
             <h2 className="text-3xl font-montserrat font-semibold">
               Hello, I am Arga Satya Mulyono.
             </h2>
-            <p className="font-montserrat text-lg w-10/12 mt-2">
+            <p className="font-montserrat text-lg md:w-10/12 mt-2">
               A fresh graduate who is exploring Backe-End. This portfolio
               contains my projects and developments. I am passionate about
               contributing to software development. dan seterusnya
