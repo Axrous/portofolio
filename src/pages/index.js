@@ -168,14 +168,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-6/12 flex mx-auto h-screen" id="skills">
+      <section
+        className="md:w-6/12 flex flex-wrap mx-auto h-screen"
+        id="skills"
+      >
         <div className="w-full my-auto mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
+            <h1 className="text-4xl md:text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
               SKILLS
             </h1>
           </div>
-          <div className="w-11/12 mx-auto mt-28 grid grid-cols-4 gap-4">
+          <div className="w-11/12 mx-auto mt-16 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center flex flex-col justify-between h-52 py-4 px-4 mx-auto rounded-lg shadow-2xl grayscale dark:grayscale-0">
               <Image src={PHP} width={150} alt="Image" className="my-auto" />
               {/* <p className="text-xl font-montserrat">PHP</p> */}
