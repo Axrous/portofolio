@@ -16,7 +16,7 @@ import React, { useState } from "react";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleSmoothScroll = (e, id) => {
     e.preventDefault();
@@ -58,7 +58,7 @@ export default function Home() {
               </svg>
             </button>
           </div>
-          <div className={`lg:w-6/12 ${isOpen ? "block" : "hidden"}`}>
+          <div className={`lg:w-6/12 md:block ${isOpen ? "block" : "hidden"}`}>
             <ul
               className={`w-11/12 flex left-0 right-0 mx-auto lg:relative justify-around font-roboto border md:border-0 absolute mt-14 md:mt-0 py-4 px-5 md:px-0 md:left-auto rounded-xl border-black dark:border-white`}
             >
