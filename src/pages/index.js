@@ -273,14 +273,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-6/12 flex mx-auto h-screen" id="contacts">
+      <section className="md:w-6/12 flex mx-auto h-screen" id="contacts">
         <div className="w-full my-auto pb-40 mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
+            <h1 className="text-4xl md:text-5xl font-exo mx-auto text-center inline-block border-b-[12px] border-b-[#19334D]">
               CONTACTS
             </h1>
           </div>
-          <div className="mt-20 flex justify-evenly">
+          <div className=" mx-auto mt-20 flex flex-wrap justify-evenly">
             <a
               href="https://github.com/Axrous?tab=repositories"
               target="_blank"
@@ -288,28 +288,29 @@ export default function Home() {
               <Image
                 src={githubLogo}
                 alt="sosmed-logo"
-                width={100}
-                className="rounded-full "
+                className="rounded-full w-24"
               />
             </a>
             <a href="https://t.me/argasatya">
               <Image
                 src={telegramLogo}
                 alt="sosmed-logo"
-                width={100}
-                className="rounded-full"
+                className="rounded-full w-24"
               />
             </a>
             <a href="">
               <Image
                 src={linkedin}
                 alt="sosmed-logo"
-                width={100}
-                className="rounded-full"
+                className="rounded-full w-24"
               />
             </a>
             <a href="mailto:argasatya16@gmail.com">
-              <Image src={mail} alt="sosmed-logo" width={100} className="" />
+              <Image
+                src={mail}
+                alt="sosmed-logo"
+                className="rounded-full w-24"
+              />
             </a>
           </div>
         </div>
